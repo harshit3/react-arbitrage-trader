@@ -1,0 +1,85 @@
+.currency-pair-container {
+    margin: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    animation: fade 0.2s;
+    display: inline-block;
+}
+
+.currency-container {
+    position: relative;
+}
+
+.currency-list {
+    position: absolute;
+    left:50%;
+    top: 130%;
+    transform: translateX(-50%);
+    background-color: black;
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    border: 1px solid;
+    z-index: 9999;
+    display: block;
+    min-width: 200px;
+}
+
+.currency-pair {
+    position: relative;
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 1px solid;
+}
+
+.arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}
+
+.arrow-up {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+.hide {
+    display: none;
+}
+
+.currency-name {
+    padding: 5px 15px;
+}
+
+.currency-name:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.current-data {
+    animation: fade 0.2s;
+    font-size: 40px;
+    margin: 20px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
