@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryLine } from 'victory';
+import { VictoryChart, VictoryLine, VictoryScatter, VictoryAxis } from 'victory';
 
 function LineChartContainer(props) {
     let { data } = props;
@@ -17,15 +17,32 @@ function LineChartContainer(props) {
     ];
 
     return (
-        <VictoryLine
-            style={{
-                data: { stroke: "steelblue" },
-                labels: {fontSize: '20px' , fill: () => "white"}
-            }}
-            data={chartData}
-            padding={10}
-            labels={(datum) => datum.y}
-        />
+        <VictoryChart
+            height={600}
+            width={800}
+        >
+            <VictoryScatter 
+                style={{data: {fill: 'steelblue'}}}
+                size={8} 
+                data={chartData} 
+            />
+            <VictoryLine
+                style={{
+                    data: { stroke: "steelblue", strokeWidth: 5 },
+                    labels: {fontSize: '30px' , fill: () => "white"}
+                }}
+                data={chartData}
+                labels={(datum) => datum.y}
+            />
+            <VictoryAxis
+                label="quarter"
+                style={{
+                    axis: { stroke: "white" },
+                    ticks: { stroke: "white", size: 5, },
+                    tickLabels: { fontSize: 35, padding:5, fill: "white" }
+                }} 
+            />
+        </VictoryChart>
     ); 
 }
 

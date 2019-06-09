@@ -6,6 +6,7 @@
     padding: 20px;
     animation: fade 0.2s;
     display: inline-block;
+    width: 25%;
 }
 
 .currency-container {
@@ -70,7 +71,7 @@
 
 .current-data {
     animation: fade 0.2s;
-    font-size: 40px;
+    font-size: 200%;
     margin: 20px;
 }
 

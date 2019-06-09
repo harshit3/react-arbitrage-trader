@@ -26,19 +26,16 @@ function CurrencyPairData(props) {
       setChartValues([0,0,0,0,0,0,0,0,0,0,0])
       setCurrentData(0);
       socket.onopen = () => {
-        console.log('sending')
         socket.send(JSON.stringify({currencyPair}))
       }
   
       socket.onmessage = (e) => {
-        console.log('received message', e.data);
         const data = parseFloat(parseFloat(e.data).toFixed(4));
         setCurrentData(data);
       }
   
       //closing current socket when new currency pair is selected
       return () => {
-        console.log('closing')
         socket.close();
       }
     }, [currencyPair])
